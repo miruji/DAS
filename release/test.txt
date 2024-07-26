@@ -1,0 +1,26 @@
+0x1
+	50                 push eax
+	53                 push ebx
+	52                 push edx
+
+	a3 00 00 00 00     eax = 4
+	89 1d 00 00 00 00  ebx = 1
+	?                  call strlen
+	cd 80              int  0x80
+
+	5a                 pop edx
+	5b                 pop ebx
+	58                 pop eax
+
+0x2
+	51                 push ecx
+	89 0d 00 00 00 00  ecx = text   (0x1)
+	e8 fd ff ff ff     call println (0x1)
+	59                 pop ecx
+
+0x3
+	e8 fe ff ff ff     call printt  (0x2)
+
+	cc b8 01 00 00 00  eax = 0x00000100
+	31 db              xor  ebx ebx
+	cd 80              int  0x80

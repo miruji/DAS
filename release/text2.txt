@@ -1,0 +1,15 @@
+# if1
+movl $1, %eax # condition --> %eax
+? $0 = %eax   # block
+  String println_0_0 "[1m[48;2;255;0;0mwhite bold text in red bg![m"
+  movl println_0_0, %ecx
+  call println
+
+# if2
+movl $1 %eax # condition --> %eax
+? $0 = %eax  # block
+  String println_1_0 "[1m[48;2;255;255;255m[38;2;255;0;0mred bold text in white bg![m"
+  movl $println_0_0, %ecx
+  call println
+
+call exit
